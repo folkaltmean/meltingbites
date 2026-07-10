@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --color-melting-red: #7d0e0d;
+  --color-soft-pink: #eaa6b9;
+  --color-olive: #687848;
+  --color-butter: #f0e090;
+  --color-cream: #fbf6ec;
+  --color-ink: #3a1412;
+}
+
+@theme inline {
+  --color-melting-red: var(--color-melting-red);
+  --color-soft-pink: var(--color-soft-pink);
+  --color-olive: var(--color-olive);
+  --color-butter: var(--color-butter);
+  --color-cream: var(--color-cream);
+  --color-ink: var(--color-ink);
+
+  --font-display: var(--font-fredoka), ui-rounded, sans-serif;
+  --font-body: var(--font-nunito), ui-sans-serif, sans-serif;
+  --font-thai: var(--font-kanit), var(--font-nunito), ui-sans-serif, sans-serif;
+
+  --radius-blob: 42% 58% 61% 39% / 45% 40% 60% 55%;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+[data-locale="th"] body,
+[data-locale="th"] {
+  font-family: var(--font-thai);
+}
+
+::selection {
+  background: var(--color-soft-pink);
+  color: var(--color-melting-red);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-melting-red);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+/* Gentle brand motion accents. Disabled entirely for reduced-motion users. */
+@keyframes drip-wobble {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(2deg);
+  }
+}
+
+.animate-drip {
+  animation: drip-wobble 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drip {
+    animation: none;
+  }
+}
