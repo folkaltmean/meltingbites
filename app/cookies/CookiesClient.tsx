@@ -9,7 +9,7 @@ import { CookieCard } from "@/components/ui/CookieCard";
 import { Stamp } from "@/components/ui/Stamp";
 import { cookies, categoryLabels, type CookieCategory } from "@/data/cookies";
 
-const CATEGORIES: CookieCategory[] = ["classic", "seasonal", "gift"];
+const CATEGORIES: CookieCategory[] = ["classic", "seasonal", "treats"];
 
 export function CookiesClient() {
   const t = useT();

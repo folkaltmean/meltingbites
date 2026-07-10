@@ -1,13 +1,9 @@
-import { Cookie as CookieIcon } from "lucide-react";
+import Image from "next/image";
 import type { Cookie } from "@/data/cookies";
 import { categoryLabels } from "@/data/cookies";
 import { Stamp } from "./Stamp";
 
-const CARD_PATTERNS = ["1", "3", "4", "5"] as const;
-
 export function CookieCard({ cookie, index = 0 }: { cookie: Cookie; index?: number }) {
-  const patternNum = CARD_PATTERNS[index % CARD_PATTERNS.length];
-
   return (
     <div className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border-2 border-soft-pink/60 bg-cream shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       {cookie.featured && (
@@ -16,19 +12,15 @@ export function CookieCard({ cookie, index = 0 }: { cookie: Cookie; index?: numb
         </div>
       )}
 
-      <div
-        className="relative flex aspect-square items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage: `url(/brand/patterns/pattern-0${patternNum}.jpg)`,
-          backgroundSize: "260px auto",
-        }}
-      >
-        <div className="flex h-28 w-28 flex-col items-center justify-center gap-1 rounded-full bg-cream/90 text-melting-red shadow-inner">
-          <CookieIcon size={40} strokeWidth={1.5} aria-hidden />
-          <span className="px-2 text-center text-[0.6rem] font-semibold leading-tight text-ink/60">
-            Photo coming soon
-          </span>
-        </div>
+      <div className="relative aspect-square overflow-hidden">
+        <Image
+          src={cookie.image}
+          alt={cookie.name}
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          priority={index < 3}
+        />
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-6">

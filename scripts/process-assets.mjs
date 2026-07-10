@@ -5,7 +5,7 @@ import sharp from "sharp";
 import { mkdir, copyFile } from "node:fs/promises";
 import path from "node:path";
 
-const SRC = path.resolve("../Brand Assets");
+const SRC = path.resolve("Brand Assets");
 const OUT = path.resolve("public/brand");
 
 const logos = [
@@ -42,6 +42,32 @@ const patterns = [1, 2, 3, 4, 5, 6, 7].map((n) => ({
   width: 1100,
 }));
 
+// Menu photography, picked from Brand Assets/Photos to match each named
+// flavour in the Cookie Card reference sheets.
+const menuPhotos = [
+  { src: "Photos/35.jpg", out: "menu/lolita.jpg", width: 1200, quality: 78 },
+  { src: "Photos/32.jpg", out: "menu/lucy.jpg", width: 1200, quality: 78 },
+  { src: "Photos/51.jpg", out: "menu/anna.jpg", width: 1200, quality: 78 },
+  { src: "Photos/New Bites-17.jpg", out: "menu/lanna.jpg", width: 1200, quality: 78 },
+  { src: "Photos/61.jpg", out: "menu/gigi.jpg", width: 1200, quality: 78 },
+  { src: "Photos/64.jpg", out: "menu/sunny.jpg", width: 1200, quality: 78 },
+  { src: "Photos/2.jpg", out: "menu/leni.jpg", width: 1200, quality: 78 },
+  { src: "Photos/9.jpg", out: "menu/goldie.jpg", width: 1200, quality: 78 },
+  { src: "Photos/63.jpg", out: "menu/cindy.jpg", width: 1200, quality: 78 },
+  { src: "Photos/55.jpg", out: "menu/bobby.jpg", width: 1200, quality: 78 },
+  { src: "Photos/New Bites-001.jpg", out: "menu/suki.jpg", width: 1200, quality: 78 },
+  { src: "Photos/33.jpg", out: "menu/carla.jpg", width: 1200, quality: 78 },
+  { src: "Photos/New Bites-006.jpg", out: "menu/scarllet.jpg", width: 1200, quality: 78 },
+  { src: "Photos/New Bites-013.jpg", out: "menu/sultan.jpg", width: 1200, quality: 78 },
+  { src: "Photos/38.jpg", out: "menu/daisy.jpg", width: 1200, quality: 78 },
+  { src: "Photos/41.jpg", out: "menu/coco.jpg", width: 1200, quality: 78 },
+  { src: "Photos/74.jpg", out: "menu/bella.jpg", width: 1200, quality: 78 },
+  { src: "Photos/44.jpg", out: "menu/bianca.jpg", width: 1200, quality: 78 },
+  { src: "Photos/1.jpg", out: "menu/ruby.jpg", width: 1200, quality: 78 },
+  { src: "Photos/New Bites-18.jpg", out: "menu/ying-yang.jpg", width: 1200, quality: 78 },
+  { src: "Photos/New Bites-26.jpg", out: "menu/rosie.jpg", width: 1200, quality: 78 },
+];
+
 const all = [...logos, ...illustrations, ...icons, ...stamps];
 
 async function ensureDir(filePath) {
@@ -63,13 +89,13 @@ async function processPng({ src, out, width }) {
   console.log("png ->", out);
 }
 
-async function processJpg({ src, out, width }) {
+async function processJpg({ src, out, width, quality = 68 }) {
   const srcPath = path.join(SRC, src);
   const outPath = path.join(OUT, out);
   await ensureDir(outPath);
   await sharp(srcPath)
     .resize({ width, withoutEnlargement: true })
-    .jpeg({ quality: 68, mozjpeg: true })
+    .jpeg({ quality, mozjpeg: true })
     .toFile(outPath);
 
   const originalPath = path.join(OUT, "originals", src);
@@ -82,6 +108,9 @@ for (const item of all) {
   await processPng(item);
 }
 for (const item of patterns) {
+  await processJpg(item);
+}
+for (const item of menuPhotos) {
   await processJpg(item);
 }
 
