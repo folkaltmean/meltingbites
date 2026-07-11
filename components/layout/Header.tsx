@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useT } from "@/lib/i18n/LocaleProvider";
-import { LanguageToggle } from "./LanguageToggle";
 import { LineIcon } from "@/components/icons/LineIcon";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 
@@ -30,8 +29,8 @@ export function Header() {
           <Image
             src="/brand/logos/logo-red.png"
             alt="Melting Bites — hand-drawn wordmark with a melting drip on the G"
-            width={168}
-            height={100}
+            width={283}
+            height={200}
             priority
             className="h-10 w-auto sm:h-12"
           />
@@ -51,20 +50,23 @@ export function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <a
-            href="#"
+            href="https://line.me/ti/p/@bitescookies"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-melting-red transition-colors hover:text-soft-pink"
             aria-label="Chat with us on LINE"
           >
             <LineIcon size={22} />
           </a>
           <a
-            href="#"
+            href="https://www.instagram.com/meltingbitesdesserts"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-melting-red transition-colors hover:text-soft-pink"
             aria-label="Follow us on Instagram"
           >
             <InstagramIcon size={22} />
           </a>
-          <LanguageToggle tone="light" />
         </div>
 
         <button
@@ -96,16 +98,25 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <div className="flex items-center justify-between border-t-2 border-soft-pink/40 pt-4">
-            <div className="flex items-center gap-4">
-              <a href="#" className="text-melting-red" aria-label="Chat with us on LINE">
-                <LineIcon size={24} />
-              </a>
-              <a href="#" className="text-melting-red" aria-label="Follow us on Instagram">
-                <InstagramIcon size={24} />
-              </a>
-            </div>
-            <LanguageToggle tone="light" />
+          <div className="flex items-center gap-4 border-t-2 border-soft-pink/40 pt-4">
+            <a
+              href="https://line.me/ti/p/@bitescookies"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-melting-red"
+              aria-label="Chat with us on LINE"
+            >
+              <LineIcon size={24} />
+            </a>
+            <a
+              href="https://www.instagram.com/meltingbitesdesserts"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-melting-red"
+              aria-label="Follow us on Instagram"
+            >
+              <InstagramIcon size={24} />
+            </a>
           </div>
         </div>
       )}

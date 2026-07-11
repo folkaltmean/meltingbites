@@ -3,7 +3,7 @@ import { VisitClient } from "./VisitClient";
 
 const title = "Visit Us";
 const description =
-  "Visit Melting Bites in Rawai, Phuket. Address, opening hours, parking notes, and LINE pre-orders for warm cookies.";
+  "Visit Melting Bites in Chalong and Rawai, Phuket. Address, opening hours, parking notes, and LINE pre-orders for warm cookies.";
 
 export const metadata: Metadata = {
   title,

@@ -28,15 +28,15 @@ const siteUrl = "https://melting-bites.example.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Melting Bites — Handmade Cookies in Rawai, Phuket",
+    default: "Melting Bites — Handmade Cookies in Chalong and Rawai, Phuket",
     template: "%s | Melting Bites",
   },
   description:
-    "Warm, handmade cookies baked fresh daily in Rawai, Phuket. Open plates, playful paper wraps, and small-batch flavours — visit our shop or ask about wholesale.",
+    "Warm, handmade cookies baked fresh daily in Chalong and Rawai, Phuket. Open plates, playful paper wraps, and small-batch flavours — visit our shop or ask about wholesale.",
   openGraph: {
-    title: "Melting Bites — Handmade Cookies in Rawai, Phuket",
+    title: "Melting Bites — Handmade Cookies in Chalong and Rawai, Phuket",
     description:
-      "Warm, handmade cookies baked fresh daily in Rawai, Phuket. Open plates, playful paper wraps, and small-batch flavours.",
+      "Warm, handmade cookies baked fresh daily in Chalong and Rawai, Phuket. Open plates, playful paper wraps, and small-batch flavours.",
     url: siteUrl,
     siteName: "Melting Bites",
     images: [{ url: "/brand/logos/icon-mark.png", width: 512, height: 512, alt: "Melting Bites logo" }],
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Melting Bites — Handmade Cookies in Rawai, Phuket",
-    description: "Warm, handmade cookies baked fresh daily in Rawai, Phuket.",
+    title: "Melting Bites — Handmade Cookies in Chalong and Rawai, Phuket",
+    description: "Warm, handmade cookies baked fresh daily in Chalong and Rawai, Phuket.",
     images: ["/brand/logos/icon-mark.png"],
   },
   icons: {

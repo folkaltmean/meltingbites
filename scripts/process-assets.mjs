@@ -12,6 +12,7 @@ const OUT = path.resolve("public/brand");
 const logos = [
   { src: "LOGO & graphic-11.png", out: "logos/logo-red.png", width: 1200 },
   { src: "LOGO & graphic-12.png", out: "logos/logo-pink.png", width: 1200 },
+  { src: "LOGO & graphic-13.png", out: "logos/logo-white.png", width: 1200 },
 ];
 
 const illustrations = [

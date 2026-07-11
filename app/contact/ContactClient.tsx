@@ -81,14 +81,14 @@ export function ContactClient() {
               <LineIcon size={22} className="mt-1 shrink-0 text-melting-red" />
               <div>
                 <p className="font-display font-semibold text-melting-red">{t.contact.details.lineLabel}</p>
-                <p className="text-ink/80">{"[LINE ID / @handle]"}</p>
+                <p className="text-ink/80">@bitescookies</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <InstagramIcon size={22} className="mt-1 shrink-0 text-melting-red" />
               <div>
                 <p className="font-display font-semibold text-melting-red">{t.contact.details.igLabel}</p>
-                <p className="text-ink/80">{"[INSTAGRAM @handle]"}</p>
+                <p className="text-ink/80">@meltingbitesdesserts</p>
               </div>
             </div>
             <div className="flex items-start gap-3">

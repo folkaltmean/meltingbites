@@ -59,15 +59,15 @@ export function HomeClient() {
 
       {/* Signature strip: the three stamps */}
       <PatternBand pattern={3} contentClassName="py-14 sm:py-16">
-        <Reveal className="mx-auto max-w-3xl rounded-[2.5rem] bg-cream px-6 py-10 text-center shadow-lg sm:px-12 sm:py-12">
+        <Reveal className="mx-auto max-w-4xl rounded-[2.5rem] bg-cream px-6 py-10 text-center shadow-lg sm:px-12 sm:py-14">
           <h2 className="font-display text-2xl font-bold text-melting-red sm:text-3xl">
             {t.home.signature.heading}
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-ink/80">{t.home.signature.subtitle}</p>
-          <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-3">
             {STAMP_NAMES.map((name, i) => (
-              <div key={name} className="flex flex-col items-center gap-3">
-                <Stamp name={name} color="red" size={110} rotate={i % 2 === 0 ? -6 : 6} />
+              <div key={name} className="flex flex-col items-center gap-4">
+                <Stamp name={name} color="red" size={160} rotate={i % 2 === 0 ? -6 : 6} />
                 <p className="max-w-[14rem] font-display text-sm font-semibold text-ink/80">
                   {t.home.signature.items[i].caption}
                 </p>
@@ -197,7 +197,9 @@ export function HomeClient() {
         </div>
         <Reveal className="mt-8 flex justify-center">
           <a
-            href="#"
+            href="https://www.instagram.com/meltingbitesdesserts"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-display text-lg font-semibold text-melting-red transition-colors hover:text-soft-pink"
           >
             {t.home.follow.handle}

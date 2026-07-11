@@ -53,7 +53,7 @@ export function VisitClient() {
             <p className="text-ink/80">{t.visit.preorder.body}</p>
             <p className="font-display font-semibold text-melting-red">{t.visit.lineHandle}</p>
             <div className="mt-2">
-              <Button href="#" variant="primary">
+              <Button href="https://line.me/ti/p/@bitescookies" variant="primary">
                 {t.visit.preorder.cta}
               </Button>
             </div>

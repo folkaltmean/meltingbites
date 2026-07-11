@@ -26,11 +26,11 @@ export function Footer() {
       <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4">
           <Image
-            src="/brand/logos/logo-pink.png"
+            src="/brand/logos/logo-white.png"
             alt="Melting Bites — hand-drawn wordmark with a melting drip on the G"
-            width={168}
-            height={100}
-            className="h-12 w-auto"
+            width={283}
+            height={200}
+            className="h-14 w-auto"
           />
           <p className="max-w-xs font-display text-lg font-semibold text-soft-pink">{t.footer.tagline}</p>
         </div>
@@ -56,13 +56,23 @@ export function Footer() {
           </h3>
           <ul className="flex flex-col gap-3">
             <li>
-              <a href="#" className="flex items-center gap-2 text-cream/90 transition-colors hover:text-soft-pink">
-                <LineIcon size={18} /> {t.common.line}: {"[LINE ID / @handle]"}
+              <a
+                href="https://line.me/ti/p/@bitescookies"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-cream/90 transition-colors hover:text-soft-pink"
+              >
+                <LineIcon size={18} /> {t.common.line}: @bitescookies
               </a>
             </li>
             <li>
-              <a href="#" className="flex items-center gap-2 text-cream/90 transition-colors hover:text-soft-pink">
-                <InstagramIcon size={18} /> {t.common.instagram}: {"[INSTAGRAM @handle]"}
+              <a
+                href="https://www.instagram.com/meltingbitesdesserts"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-cream/90 transition-colors hover:text-soft-pink"
+              >
+                <InstagramIcon size={18} /> {t.common.instagram}: @meltingbitesdesserts
               </a>
             </li>
             <li>

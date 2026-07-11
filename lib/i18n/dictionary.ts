@@ -16,8 +16,8 @@ export const en = {
   },
   home: {
     hero: {
-      eyebrow: "Handmade in Rawai, Phuket",
-      title: "Warm cookies. Made by hand. Meant to be shared.",
+      eyebrow: "Handmade in Chalong and Rawai, Phuket",
+      title: "Freshly baked cookies, made exceptional.",
       subtitle:
         "We mix, roll and bake every batch ourselves — still warm when it reaches your plate, still warm when you take that first bite.",
       ctaPrimary: "Visit us in Rawai",
@@ -63,7 +63,7 @@ export const en = {
     follow: {
       heading: "Follow the crumbs",
       subtitle: "Behind-the-scenes dough, fresh trays, and the occasional kitchen chaos.",
-      handle: "[INSTAGRAM @handle]",
+      handle: "@meltingbitesdesserts",
     },
   },
   cookies: {
@@ -113,7 +113,7 @@ export const en = {
       body: "Want your plate ready when you walk in? Message us on LINE and we'll have it warm and waiting.",
       cta: "Message us on LINE",
     },
-    lineHandle: "[LINE ID / @handle]",
+    lineHandle: "@bitescookies",
     mapHeading: "Find us on the map",
     photosHeading: "A peek inside",
   },
@@ -181,7 +181,7 @@ export const en = {
     signoff: "Bite me, please — talk soon.",
   },
   footer: {
-    tagline: "Handmade in Rawai. Bite me, please.",
+    tagline: "Handmade in Chalong and Rawai. Bite me, please.",
     navLabel: "Explore",
     followLabel: "Say hi",
     addressLabel: "Find us",

@@ -3,7 +3,7 @@ import { CookiesClient } from "./CookiesClient";
 
 const title = "Our Cookies";
 const description =
-  "Small-batch, handmade cookies baked fresh in Rawai, Phuket. Browse our flavours and ask about custom gift plates.";
+  "Small-batch, handmade cookies baked fresh in Chalong and Rawai, Phuket. Browse our flavours and ask about custom gift plates.";
 
 export const metadata: Metadata = {
   title,
