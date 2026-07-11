@@ -29,11 +29,8 @@ export function CookieCard({ cookie, index = 0 }: { cookie: Cookie; index?: numb
         </span>
         <h3 className="font-display text-xl font-semibold text-melting-red">{cookie.name}</h3>
         <p className="flex-1 text-sm text-ink/80">{cookie.description}</p>
-        <div className="mt-2 flex items-center justify-between">
+        <div className="mt-2">
           <span className="font-display text-lg font-semibold text-melting-red">{cookie.price}</span>
-          <span className="rounded-full border-2 border-melting-red px-4 py-1.5 text-sm font-semibold text-melting-red transition-colors group-hover:bg-melting-red group-hover:text-cream">
-            Add to plate
-          </span>
         </div>
       </div>
     </div>
