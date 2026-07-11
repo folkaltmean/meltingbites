@@ -15,7 +15,10 @@
 
 # next.js
 /.next/
-/out/
+
+# out/ is intentionally committed — it's the built static site,
+# deployed straight to Plesk via git pull. Rebuild with `npm run build`
+# before committing whenever source content changes.
 
 # production
 /build
