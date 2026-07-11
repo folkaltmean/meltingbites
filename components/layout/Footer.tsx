@@ -28,9 +28,9 @@ export function Footer() {
           <Image
             src="/brand/logos/logo-white.png"
             alt="Melting Bites — hand-drawn wordmark with a melting drip on the G"
-            width={283}
-            height={200}
-            className="h-14 w-auto"
+            width={1200}
+            height={573}
+            className="h-12 w-auto"
           />
           <p className="max-w-xs font-display text-lg font-semibold text-soft-pink">{t.footer.tagline}</p>
         </div>

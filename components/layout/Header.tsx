@@ -29,8 +29,8 @@ export function Header() {
           <Image
             src="/brand/logos/logo-red.png"
             alt="Melting Bites — hand-drawn wordmark with a melting drip on the G"
-            width={283}
-            height={200}
+            width={1200}
+            height={573}
             priority
             className="h-10 w-auto sm:h-12"
           />

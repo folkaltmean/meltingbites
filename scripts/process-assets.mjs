@@ -9,10 +9,13 @@ import path from "node:path";
 const SRC = path.resolve("Brand Assets");
 const OUT = path.resolve("public/brand");
 
+// trim: true crops away the transparent margin baked into the source export
+// so the file's own aspect ratio matches the visible wordmark, not an
+// arbitrary canvas padded well past the glyphs on every side.
 const logos = [
-  { src: "LOGO & graphic-11.png", out: "logos/logo-red.png", width: 1200 },
-  { src: "LOGO & graphic-12.png", out: "logos/logo-pink.png", width: 1200 },
-  { src: "LOGO & graphic-13.png", out: "logos/logo-white.png", width: 1200 },
+  { src: "LOGO & graphic-11.png", out: "logos/logo-red.png", width: 1200, trim: true },
+  { src: "LOGO & graphic-12.png", out: "logos/logo-pink.png", width: 1200, trim: true },
+  { src: "LOGO & graphic-13.png", out: "logos/logo-white.png", width: 1200, trim: true },
 ];
 
 const illustrations = [
@@ -76,14 +79,17 @@ async function ensureDir(filePath) {
   await mkdir(path.dirname(filePath), { recursive: true });
 }
 
-async function processPng({ src, out, width }) {
+async function processPng({ src, out, width, trim }) {
   const srcPath = path.join(SRC, src);
   const outPath = path.join(OUT, out);
   await ensureDir(outPath);
-  await sharp(srcPath)
+  let pipeline = sharp(srcPath);
+  if (trim) pipeline = pipeline.trim();
+  const outInfo = await pipeline
     .resize({ width, withoutEnlargement: true })
     .png({ compressionLevel: 9, palette: true, quality: 90 })
     .toFile(outPath);
+  if (trim) console.log(`  (trimmed to ${outInfo.width}x${outInfo.height})`);
   console.log("png ->", out);
 }
 
