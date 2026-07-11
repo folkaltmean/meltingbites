@@ -106,6 +106,7 @@ that file, so the TH toggle works today, just not with real Thai text yet.
 ## 10. Original brand assets
 
 Full-resolution, unmodified copies of every source file used on the site
-live in `public/brand/originals/` (kept out of the optimized `public/brand/`
-tree so future re-exports have a clean source). No action needed unless you
-want to re-crop or re-process something.
+live in `Brand Assets/` at the repo root (the true source — not duplicated
+into `public/`, since anything under `public/` ships in every build). Run
+`node scripts/process-assets.mjs` to regenerate the optimized copies in
+`public/brand/` after re-cropping or re-exporting something.

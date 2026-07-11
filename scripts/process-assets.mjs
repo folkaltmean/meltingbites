@@ -1,8 +1,9 @@
 // One-off asset pipeline: takes the raw exports from Brand Assets/ and produces
-// web-sized, compressed copies in public/brand/, plus untouched copies in
-// public/brand/originals/ for future re-exports.
+// web-sized, compressed copies in public/brand/. Brand Assets/ itself is the
+// full-resolution source archive, so we don't duplicate originals into
+// public/ — anything under public/ ships in every build/export.
 import sharp from "sharp";
-import { mkdir, copyFile } from "node:fs/promises";
+import { mkdir } from "node:fs/promises";
 import path from "node:path";
 
 const SRC = path.resolve("Brand Assets");
@@ -82,10 +83,6 @@ async function processPng({ src, out, width }) {
     .resize({ width, withoutEnlargement: true })
     .png({ compressionLevel: 9, palette: true, quality: 90 })
     .toFile(outPath);
-
-  const originalPath = path.join(OUT, "originals", src);
-  await ensureDir(originalPath);
-  await copyFile(srcPath, originalPath);
   console.log("png ->", out);
 }
 
@@ -97,10 +94,6 @@ async function processJpg({ src, out, width, quality = 68 }) {
     .resize({ width, withoutEnlargement: true })
     .jpeg({ quality, mozjpeg: true })
     .toFile(outPath);
-
-  const originalPath = path.join(OUT, "originals", src);
-  await ensureDir(originalPath);
-  await copyFile(srcPath, originalPath);
   console.log("jpg ->", out);
 }
 
