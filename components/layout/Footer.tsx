@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
 import { useT } from "@/lib/i18n/LocaleProvider";
@@ -25,13 +24,6 @@ export function Footer() {
     <PatternBand pattern={7} rounded="top" as="footer" contentClassName="text-cream">
       <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4">
-          <Image
-            src="/brand/logos/logo-white.png"
-            alt="Melting Bites — hand-drawn wordmark with a melting drip on the G"
-            width={1200}
-            height={573}
-            className="h-12 w-auto"
-          />
           <p className="max-w-xs font-display text-lg font-semibold text-soft-pink">{t.footer.tagline}</p>
         </div>
 
