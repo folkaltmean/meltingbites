@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fredoka, Nunito, Kanit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { LocaleProvider } from "@/lib/i18n/LocaleProvider";
 import { Header } from "@/components/layout/Header";
@@ -24,6 +25,7 @@ const kanit = Kanit({
 });
 
 const siteUrl = "https://melting-bites.example.com";
+const gaId = "G-1TNR14JZFM";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -71,6 +73,14 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </LocaleProvider>
+        {/* Google tag (gtag.js) */}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${gaId}');`}
+        </Script>
       </body>
     </html>
   );
