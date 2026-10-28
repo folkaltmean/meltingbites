@@ -36,7 +36,7 @@ export const en = {
     featured: {
       heading: "Today's favourites",
       subtitle:
-        "A little taste of what's coming out of the oven. The full lineup — and the flavours we rotate in — lives on the cookies page.",
+        "A little taste of what's coming out of the oven. The full lineup — and the flavours we rotate in — lives on the menu page.",
       cta: "See the full menu",
     },
     openPlate: {

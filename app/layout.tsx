@@ -24,7 +24,7 @@ const kanit = Kanit({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = "https://melting-bites.example.com";
+const siteUrl = "https://www.meltingbitesdessert.com";
 const gaId = "G-1TNR14JZFM";
 
 export const metadata: Metadata = {

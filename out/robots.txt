@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://melting-bites.example.com/sitemap.xml
+Sitemap: https://www.meltingbitesdessert.com/sitemap.xml

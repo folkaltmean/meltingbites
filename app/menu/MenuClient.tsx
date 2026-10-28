@@ -61,12 +61,8 @@ export function MenuClient() {
     [branch, halloweenOn]
   );
 
-  const grabLinks = (branch === "all" ? (["rawai", "chalong"] as Branch[]) : [branch]).filter(
-    (b) => BRANCHES[b].grabUrl
-  );
-
   return (
-    <div className={grabLinks.length ? "pb-24" : ""}>
+    <div>
       <header className="mx-auto max-w-5xl px-5 pt-10 sm:px-8 sm:pt-14">
         <h1 className="font-display text-4xl font-bold leading-tight text-melting-red sm:text-5xl">Menu</h1>
         <p className="mt-2 text-base text-ink/75">Handmade daily in Rawai and Chalong, Phuket.</p>
@@ -141,24 +137,6 @@ export function MenuClient() {
         </footer>
       </div>
 
-      {grabLinks.length > 0 && (
-        <div className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-melting-red/10 bg-cream/95 px-5 py-3 backdrop-blur">
-          <div className="mx-auto flex max-w-5xl gap-3">
-            {grabLinks.map((b) => (
-              <a
-                key={b}
-                href={BRANCHES[b].grabUrl!}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => window.gtag?.("event", "grab_click", { branch: b })}
-                className="flex h-12 flex-1 items-center justify-center rounded-full bg-melting-red font-display text-base font-semibold text-cream"
-              >
-                Order on Grab{grabLinks.length > 1 || branch === "all" ? ` · ${BRANCHES[b].name}` : ""}
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -9,13 +9,25 @@ import { Section } from "@/components/ui/Section";
 import { PatternBand } from "@/components/ui/PatternBand";
 import { Stamp } from "@/components/ui/Stamp";
 import { CookieCard } from "@/components/ui/CookieCard";
-import { cookies } from "@/data/cookies";
+import type { Cookie } from "@/data/cookies";
+import { MENU } from "@/data/menu";
 
 const STAMP_NAMES = ["freshly-baked", "made-with-love", "bite-me"] as const;
 
 export function HomeClient() {
   const t = useT();
-  const featured = cookies.filter((c) => c.featured).slice(0, 4);
+  // Best sellers from the live menu (data/menu.ts), shown in the existing card style.
+  const featured: Cookie[] = MENU.flatMap((s) => s.items)
+    .filter((i) => i.bestSeller)
+    .map((i) => ({
+      id: i.id,
+      name: i.name,
+      description: i.description,
+      price: `${i.price}฿`,
+      category: "classic",
+      image: i.image,
+      featured: true,
+    }));
 
   return (
     <>
@@ -85,7 +97,7 @@ export function HomeClient() {
           </h2>
           <p className="mt-3 text-ink/80">{t.home.featured.subtitle}</p>
         </Reveal>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((cookie, i) => (
             <Reveal key={cookie.id} delay={i * 0.08}>
               <CookieCard cookie={cookie} index={i} />

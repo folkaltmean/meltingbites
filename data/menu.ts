@@ -3,11 +3,9 @@
 
 export type Branch = "rawai" | "chalong";
 
-export const BRANCHES: Record<Branch, { name: string; grabUrl: string | null }> = {
-  // Grab links: paste the shop's Grab store URL for each branch. The order button
-  // stays hidden for a branch until its URL is filled in.
-  rawai: { name: "Rawai", grabUrl: null },
-  chalong: { name: "Chalong", grabUrl: null },
+export const BRANCHES: Record<Branch, { name: string }> = {
+  rawai: { name: "Rawai" },
+  chalong: { name: "Chalong" },
 };
 
 // Halloween specials. Set `enabled: false` to take them off the menu right away;
