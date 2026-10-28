@@ -5,3 +5,6 @@ export const FORM_ENDPOINTS = {
   wholesale: "https://formspree.io/f/[FORM_ENDPOINT]",
   contact: "https://formspree.io/f/[FORM_ENDPOINT]",
 };
+
+// Forms stay hidden until a real endpoint is in place, so visitors never hit a dead "Send" button.
+export const formReady = (endpoint: string) => !endpoint.includes("[");

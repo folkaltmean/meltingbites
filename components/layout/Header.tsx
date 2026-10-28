@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useT } from "@/lib/i18n/LocaleProvider";
-import { LineIcon } from "@/components/icons/LineIcon";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 
 const NAV_KEYS = ["home", "cookies", "story", "visit", "wholesale", "contact"] as const;
@@ -50,15 +49,6 @@ export function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <a
-            href="https://line.me/ti/p/@bitescookies"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-melting-red transition-colors hover:text-soft-pink"
-            aria-label="Chat with us on LINE"
-          >
-            <LineIcon size={22} />
-          </a>
-          <a
             href="https://www.instagram.com/meltingbitesdesserts"
             target="_blank"
             rel="noopener noreferrer"
@@ -99,15 +89,6 @@ export function Header() {
             ))}
           </nav>
           <div className="flex items-center gap-4 border-t-2 border-soft-pink/40 pt-4">
-            <a
-              href="https://line.me/ti/p/@bitescookies"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-melting-red"
-              aria-label="Chat with us on LINE"
-            >
-              <LineIcon size={24} />
-            </a>
             <a
               href="https://www.instagram.com/meltingbitesdesserts"
               target="_blank"

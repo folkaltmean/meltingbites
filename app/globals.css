@@ -7,6 +7,9 @@
   --color-butter: #f0e090;
   --color-cream: #fbf6ec;
   --color-ink: #3a1412;
+  /* Order-on-Grab green: dark enough for white text on a sunny screen */
+  --color-grab: #0a7a3d;
+  --color-grab-dark: #075c2e;
 }
 
 @theme inline {
@@ -16,6 +19,8 @@
   --color-butter: var(--color-butter);
   --color-cream: var(--color-cream);
   --color-ink: var(--color-ink);
+  --color-grab: var(--color-grab);
+  --color-grab-dark: var(--color-grab-dark);
 
   --font-display: var(--font-fredoka), ui-rounded, sans-serif;
   --font-body: var(--font-nunito), ui-sans-serif, sans-serif;

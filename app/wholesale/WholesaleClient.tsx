@@ -9,7 +9,8 @@ import { Button } from "@/components/ui/Button";
 import { PatternBand } from "@/components/ui/PatternBand";
 import { useFormSubmit } from "@/components/forms/useFormSubmit";
 import { fieldClass, labelClass } from "@/components/forms/fieldStyles";
-import { FORM_ENDPOINTS } from "@/lib/forms";
+import { FORM_ENDPOINTS, formReady } from "@/lib/forms";
+import { InstagramFallback } from "@/components/forms/InstagramFallback";
 
 export function WholesaleClient() {
   const t = useT();
@@ -65,7 +66,9 @@ export function WholesaleClient() {
 
       <PatternBand pattern={4} rounded="both" contentClassName="py-14 sm:py-16">
         <Reveal className="mx-auto max-w-2xl rounded-[2.5rem] bg-cream p-6 shadow-lg sm:p-10">
-          {status === "success" ? (
+          {!formReady(FORM_ENDPOINTS.wholesale) ? (
+              <InstagramFallback heading={t.wholesale.form.heading} body="Message us on Instagram with your dates, guest numbers and what you have in mind. We'll reply with options and prices." />
+            ) : status === "success" ? (
             <div className="flex flex-col items-center gap-3 py-8 text-center">
               <CheckCircle2 className="text-olive" size={48} />
               <h2 className="font-display text-2xl font-bold text-melting-red">

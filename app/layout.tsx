@@ -5,6 +5,7 @@ import "./globals.css";
 import { LocaleProvider } from "@/lib/i18n/LocaleProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { StickyOrderBar } from "@/components/shops/StickyOrderBar";
 
 const fredoka = Fredoka({
   variable: "--font-fredoka",
@@ -30,26 +31,25 @@ const gaId = "G-1TNR14JZFM";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Melting Bites — Handmade Cookies in Chalong and Rawai, Phuket",
+    default: "Melting Bites: handmade 150g cookies in Chalong and Rawai, Phuket",
     template: "%s | Melting Bites",
   },
   description:
-    "Warm, handmade cookies baked fresh daily in Chalong and Rawai, Phuket. Open plates, playful paper wraps, and small-batch flavours — visit our shop or ask about wholesale.",
+    "Handmade 150g cookies, baked fresh daily in Chalong and Rawai, Phuket. Order on Grab or get directions to either shop.",
   openGraph: {
-    title: "Melting Bites — Handmade Cookies in Chalong and Rawai, Phuket",
-    description:
-      "Warm, handmade cookies baked fresh daily in Chalong and Rawai, Phuket. Open plates, playful paper wraps, and small-batch flavours.",
+    title: "Melting Bites: handmade 150g cookies in Phuket",
+    description: "Handmade 150g cookies, baked fresh daily in Chalong and Rawai, Phuket. Order on Grab or visit us.",
     url: siteUrl,
     siteName: "Melting Bites",
-    images: [{ url: "/brand/logos/icon-mark.png", width: 512, height: 512, alt: "Melting Bites logo" }],
+    images: [{ url: "/brand/og-cookie.jpg", width: 1200, height: 630, alt: "A Melting Bites chocolate chip cookie broken in half" }],
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    card: "summary",
-    title: "Melting Bites — Handmade Cookies in Chalong and Rawai, Phuket",
-    description: "Warm, handmade cookies baked fresh daily in Chalong and Rawai, Phuket.",
-    images: ["/brand/logos/icon-mark.png"],
+    card: "summary_large_image",
+    title: "Melting Bites: handmade 150g cookies in Phuket",
+    description: "Handmade 150g cookies, baked fresh daily in Chalong and Rawai, Phuket.",
+    images: ["/brand/og-cookie.jpg"],
   },
   icons: {
     icon: "/brand/logos/icon-mark.png",
@@ -72,6 +72,7 @@ export default function RootLayout({
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <StickyOrderBar />
         </LocaleProvider>
         {/* Google tag (gtag.js) */}
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />

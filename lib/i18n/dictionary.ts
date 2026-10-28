@@ -17,10 +17,10 @@ export const en = {
   home: {
     hero: {
       eyebrow: "Handmade in Chalong and Rawai, Phuket",
-      title: "Freshly baked cookies, made exceptional.",
+      title: "Handmade 150g cookies in Phuket",
       subtitle:
         "We mix, roll and bake every batch ourselves — still warm when it reaches your plate, still warm when you take that first bite.",
-      ctaPrimary: "Visit us in Rawai",
+      ctaPrimary: "Find our shops",
       ctaSecondary: "See the cookies",
     },
     signature: {
@@ -40,24 +40,19 @@ export const en = {
       cta: "See the full menu",
     },
     openPlate: {
-      eyebrow: "Our signature",
-      heading: "No boxes. Just plates and paper.",
-      body: "Here's our thing: cookies come out on an open plate, dressed in a paper wrap that changes with the occasion. Birthday wrap, holiday wrap, 'just because' wrap — same warm cookies underneath, a different mood on top.",
-      points: [
-        "Pick your plate size, from a solo treat to a full spread.",
-        "Choose a wrap for the moment — everyday, gifting or seasonal.",
-        "Open paper means the cookies do the talking, not the packaging.",
-      ],
-      cta: "Build a plate with us",
+      eyebrow: "Boxes",
+      heading: "Birthday boxes and Creamie boxes.",
+      body: "Celebrating? Ask for a birthday box of cookies. Our Creamies, 200g dessert cups, come boxed too, at our Chalong shop.",
+      cta: "See the menu",
     },
     story: {
-      heading: "A kitchen before it was a shop",
-      body: "Melting Bites started the way most good things do — a kitchen, a lot of trial batches, and people who wouldn't stop asking for more. [FOUNDER STORY] We opened our doors in Rawai so the neighbourhood could get their fix warm, not shipped.",
+      heading: "Started in Chalong",
+      body: "Melting Bites started in Chalong, near the Chalong Pier roundabout. Our second shop opened in Rawai on 10 October 2026.",
       cta: "Read our story",
     },
     wholesale: {
       heading: "Baking for your café, hotel or next big event?",
-      body: "We wrap for partners too — co-branded plates for hotels, cafés, weddings and corporate gifting, all baked in the same small batches.",
+      body: "Boxes of cookies for villas, hotels, offices and events in Phuket.",
       cta: "Talk wholesale",
     },
     follow: {
@@ -80,50 +75,25 @@ export const en = {
   },
   story: {
     heading: "Our Story",
-    lead: "[FOUNDER STORY — the short, human version: who started Melting Bites, why cookies, why Rawai.]",
+    lead: "Melting Bites started in Chalong, near the Chalong Pier roundabout. On 10 October 2026 we opened our second shop, in Rawai.",
     sections: [
       {
-        heading: "Why cookies",
-        body: "[FOUNDER STORY — what cookies mean to the founder, any family-recipe origins, the first batch that started it all.]",
-      },
-      {
-        heading: "Why Rawai",
-        body: "[FOUNDER STORY — why this neighbourhood, what the space means, details about the shop's setting.]",
-      },
-      {
-        heading: "Why open plates, not boxes",
-        body: "We never liked the idea of a sealed box hiding a warm cookie. Plates and paper wraps let the cookie be the star, and let us dress it differently for every occasion, every partner, every mood.",
+        heading: "Two shops",
+        body: "Chalong is our daytime shop, and it delivers. Rawai stays open into the evening and serves soft serve.",
       },
     ],
-    closing: "That's Melting Bites — [FOUNDER STORY: closing line in the founder's own voice]. Come say hi in Rawai.",
+    closing: "Come and say hi in Chalong or Rawai.",
   },
   visit: {
     heading: "Visit Us",
-    subtitle: "Warm cookies, cold air-con, and a plate with your name on it.",
-    addressLabel: "Address",
-    address: "[RAWAI STORE ADDRESS]",
-    hoursLabel: "Opening Hours",
-    hours: "[OPENING HOURS]",
-    findUs: {
-      heading: "Getting here",
-      body: "[PARKING / HOW-TO-FIND-US NOTE]",
-    },
-    preorder: {
-      heading: "Pre-order on LINE",
-      body: "Want your plate ready when you walk in? Message us on LINE and we'll have it warm and waiting.",
-      cta: "Message us on LINE",
-    },
-    lineHandle: "@bitescookies",
-    mapHeading: "Find us on the map",
-    photosHeading: "A peek inside",
+    subtitle: "Two shops in Phuket, open every day.",
   },
   wholesale: {
     heading: "Wholesale & Partnerships",
-    subtitle:
-      "From a café pastry case to a hotel welcome plate, we bake small-batch cookies for partners who care about the details — including a wrap with your name on it.",
+    subtitle: "Boxes of handmade 150g cookies for villas, hotels, offices and events in Phuket.",
     wrap: {
-      heading: "Co-branded wraps, made for you",
-      body: "Every Melting Bites plate is dressed in a paper wrap. For partners, that wrap can carry your logo, your colours or your event name — the same handmade cookie, dressed for your brand.",
+      heading: "Gifts and wholesale",
+      body: "Tell us about your guests or your event, and we'll come back to you with options and prices.",
     },
     benefitsHeading: "Why bake with us",
     benefits: [
@@ -133,11 +103,7 @@ export const en = {
       },
       {
         heading: "Built around your event",
-        body: "Cafés, hotels, weddings, corporate gifting — we scale plates to fit the occasion.",
-      },
-      {
-        heading: "Co-branded wraps",
-        body: "Your logo or theme on the wrap, our kitchen behind the cookie.",
+        body: "Villas, hotels, offices and events, sized to your order.",
       },
       {
         heading: "Reliable, standing supply",
@@ -161,7 +127,7 @@ export const en = {
   },
   contact: {
     heading: "Say Hello",
-    subtitle: "Questions, custom plates, or just want to tell us your favourite flavour? We're all ears.",
+    subtitle: "Questions, birthday boxes, or just want to tell us your favourite flavour? Find us at either shop or on Instagram.",
     form: {
       heading: "Send us a message",
       name: "Your name",
@@ -181,18 +147,16 @@ export const en = {
     signoff: "Bite me, please — talk soon.",
   },
   footer: {
-    tagline: "Handmade in Chalong and Rawai. Bite me, please.",
+    tagline: "Handmade 150g cookies in Chalong and Rawai, Phuket. Bite me, please.",
     navLabel: "Explore",
     followLabel: "Say hi",
     addressLabel: "Find us",
-    address: "[RAWAI STORE ADDRESS]",
     copyright: "Melting Bites. All rights reserved.",
   },
   common: {
     instagram: "Instagram",
     line: "LINE",
     placeholderPhoto: "Photo coming soon",
-    placeholderMap: "[GOOGLE MAPS EMBED URL — swap the src on this iframe]",
   },
 } as const;
 

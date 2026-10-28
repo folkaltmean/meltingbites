@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, MapPin } from "lucide-react";
+import { Clock, MapPin } from "lucide-react";
 import { useT } from "@/lib/i18n/LocaleProvider";
 import { PatternBand } from "@/components/ui/PatternBand";
-import { LineIcon } from "@/components/icons/LineIcon";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
+import { SHOP_LIST } from "@/data/shops";
 
 const NAV_KEYS = ["home", "cookies", "story", "visit", "wholesale", "contact"] as const;
 const NAV_HREFS: Record<(typeof NAV_KEYS)[number], string> = {
@@ -49,30 +49,12 @@ export function Footer() {
           <ul className="flex flex-col gap-3">
             <li>
               <a
-                href="https://line.me/ti/p/@bitescookies"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-cream/90 transition-colors hover:text-soft-pink"
-              >
-                <LineIcon size={18} /> {t.common.line}: @bitescookies
-              </a>
-            </li>
-            <li>
-              <a
                 href="https://www.instagram.com/meltingbitesdesserts"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-cream/90 transition-colors hover:text-soft-pink"
               >
                 <InstagramIcon size={18} /> {t.common.instagram}: @meltingbitesdesserts
-              </a>
-            </li>
-            <li>
-              <a
-                href="mailto:hello@example.com"
-                className="flex items-center gap-2 text-cream/90 transition-colors hover:text-soft-pink"
-              >
-                <Mail size={18} /> {"[EMAIL]"}
               </a>
             </li>
           </ul>
@@ -82,10 +64,24 @@ export function Footer() {
           <h3 className="mb-4 font-display text-sm font-semibold uppercase tracking-wide text-soft-pink">
             {t.footer.addressLabel}
           </h3>
-          <p className="flex items-start gap-2 text-cream/90">
-            <MapPin size={18} className="mt-0.5 shrink-0" />
-            <span>{t.footer.address}</span>
-          </p>
+          <ul className="flex flex-col gap-4">
+            {SHOP_LIST.map((shop) => (
+              <li key={shop.id} className="text-cream/90">
+                <Link href={`/${shop.id}`} className="font-display font-semibold text-cream hover:text-soft-pink">
+                  {shop.name}
+                </Link>
+                <p className="mt-1 flex items-start gap-2 text-sm">
+                  <MapPin size={16} className="mt-0.5 shrink-0" aria-hidden />
+                  <a href={shop.maps} target="_blank" rel="noopener noreferrer" className="hover:text-soft-pink">
+                    {shop.address}
+                  </a>
+                </p>
+                <p className="mt-1 flex items-start gap-2 text-sm">
+                  <Clock size={16} className="mt-0.5 shrink-0" aria-hidden /> {shop.hoursLabel}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 

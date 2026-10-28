@@ -1,16 +1,17 @@
 "use client";
 
-import { CheckCircle2, AlertCircle, Mail, MapPin, Phone } from "lucide-react";
+import { CheckCircle2, AlertCircle, MapPin } from "lucide-react";
 import { useT } from "@/lib/i18n/LocaleProvider";
 import { Reveal } from "@/components/motion/Reveal";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Stamp } from "@/components/ui/Stamp";
-import { LineIcon } from "@/components/icons/LineIcon";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { useFormSubmit } from "@/components/forms/useFormSubmit";
 import { fieldClass, labelClass } from "@/components/forms/fieldStyles";
-import { FORM_ENDPOINTS } from "@/lib/forms";
+import { FORM_ENDPOINTS, formReady } from "@/lib/forms";
+import { InstagramFallback } from "@/components/forms/InstagramFallback";
+import { INSTAGRAM, SHOP_LIST } from "@/data/shops";
 
 export function ContactClient() {
   const t = useT();
@@ -28,7 +29,9 @@ export function ContactClient() {
       <Section className="pt-0 sm:pt-0">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal className="rounded-[2.5rem] border-2 border-soft-pink/60 bg-cream p-6 sm:p-10">
-            {status === "success" ? (
+            {!formReady(FORM_ENDPOINTS.contact) ? (
+              <InstagramFallback heading={t.contact.form.heading} body="The quickest way to reach us is a message on Instagram, or come and see us at either shop." />
+            ) : status === "success" ? (
               <div className="flex flex-col items-center gap-3 py-8 text-center">
                 <CheckCircle2 className="text-olive" size={48} />
                 <h2 className="font-display text-2xl font-bold text-melting-red">
@@ -78,40 +81,24 @@ export function ContactClient() {
               <Stamp name="made-with-love" color="red" size={84} rotate={8} />
             </div>
             <div className="flex items-start gap-3">
-              <LineIcon size={22} className="mt-1 shrink-0 text-melting-red" />
-              <div>
-                <p className="font-display font-semibold text-melting-red">{t.contact.details.lineLabel}</p>
-                <p className="text-ink/80">@bitescookies</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
               <InstagramIcon size={22} className="mt-1 shrink-0 text-melting-red" />
               <div>
                 <p className="font-display font-semibold text-melting-red">{t.contact.details.igLabel}</p>
-                <p className="text-ink/80">@meltingbitesdesserts</p>
+                <a href={INSTAGRAM.url} target="_blank" rel="noopener noreferrer" className="text-ink/80 underline-offset-2 hover:underline">
+                  {INSTAGRAM.handle}
+                </a>
               </div>
             </div>
-            <div className="flex items-start gap-3">
-              <Mail size={22} className="mt-1 shrink-0 text-melting-red" />
-              <div>
-                <p className="font-display font-semibold text-melting-red">{t.contact.details.emailLabel}</p>
-                <p className="text-ink/80">{"[EMAIL]"}</p>
+            {SHOP_LIST.map((shop) => (
+              <div key={shop.id} className="flex items-start gap-3">
+                <MapPin size={22} className="mt-1 shrink-0 text-melting-red" />
+                <div>
+                  <p className="font-display font-semibold text-melting-red">{shop.fullName}</p>
+                  <p className="text-ink/80">{shop.address}</p>
+                  <p className="text-ink/80">{shop.hoursLabel}</p>
+                </div>
               </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <Phone size={22} className="mt-1 shrink-0 text-melting-red" />
-              <div>
-                <p className="font-display font-semibold text-melting-red">{t.contact.details.phoneLabel}</p>
-                <p className="text-ink/80">{"[PHONE]"}</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <MapPin size={22} className="mt-1 shrink-0 text-melting-red" />
-              <div>
-                <p className="font-display font-semibold text-melting-red">{t.contact.details.addressLabel}</p>
-                <p className="text-ink/80">{"[RAWAI STORE ADDRESS]"}</p>
-              </div>
-            </div>
+            ))}
             <p className="mt-2 font-display text-lg font-semibold italic text-melting-red">{t.contact.signoff}</p>
           </Reveal>
         </div>

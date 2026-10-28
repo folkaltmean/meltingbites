@@ -4,7 +4,7 @@ export const dynamic = "force-static";
 
 const siteUrl = "https://www.meltingbitesdessert.com";
 
-const routes = ["", "/menu", "/story", "/visit", "/wholesale", "/contact"];
+const routes = ["", "/chalong", "/rawai", "/menu", "/story", "/visit", "/wholesale", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
