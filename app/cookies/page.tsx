@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
-import { CookiesClient } from "./CookiesClient";
+import { RedirectToMenu } from "./RedirectToMenu";
 
-const title = "Our Cookies";
-const description =
-  "Small-batch, handmade cookies baked fresh in Chalong and Rawai, Phuket. Browse our flavours and ask about custom gift plates.";
-
+// The cookies page moved to /menu. Static export has no server redirects,
+// so the old URL forwards in the browser (meta refresh + JS fallback).
 export const metadata: Metadata = {
-  title,
-  description,
-  openGraph: { title, description },
-  twitter: { title, description },
+  title: "Menu",
+  robots: { index: false },
+  alternates: { canonical: "/menu/" },
 };
 
 export default function CookiesPage() {
-  return <CookiesClient />;
+  return <RedirectToMenu />;
 }

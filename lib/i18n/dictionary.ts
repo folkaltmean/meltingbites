@@ -5,7 +5,7 @@
 export const en = {
   nav: {
     home: "Home",
-    cookies: "Our Cookies",
+    cookies: "Menu",
     story: "Our Story",
     visit: "Visit Us",
     wholesale: "Wholesale",

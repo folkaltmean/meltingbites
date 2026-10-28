@@ -11,7 +11,7 @@ import { InstagramIcon } from "@/components/icons/InstagramIcon";
 const NAV_KEYS = ["home", "cookies", "story", "visit", "wholesale", "contact"] as const;
 const NAV_HREFS: Record<(typeof NAV_KEYS)[number], string> = {
   home: "/",
-  cookies: "/cookies",
+  cookies: "/menu",
   story: "/story",
   visit: "/visit",
   wholesale: "/wholesale",

@@ -93,7 +93,7 @@ export function HomeClient() {
           ))}
         </div>
         <Reveal className="mt-10 flex justify-center">
-          <Button href="/cookies" variant="primary">
+          <Button href="/menu" variant="primary">
             {t.home.featured.cta}
           </Button>
         </Reveal>
@@ -129,7 +129,7 @@ export function HomeClient() {
               ))}
             </ul>
             <div className="mt-8">
-              <Button href="/cookies" variant="primary">
+              <Button href="/menu" variant="primary">
                 {t.home.openPlate.cta}
               </Button>
             </div>
